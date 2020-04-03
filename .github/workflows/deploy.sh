@@ -1,4 +1,7 @@
-ame: Deploy
+name: Deploy
+
+on: [push]
+
 
 on: [push]
 
@@ -16,7 +19,7 @@ jobs:
         HELLO: cool
         MESSAGE: hello world
      with:
-        KEY: ${{ secrets.KEY }}
+        key: ${{ secrets.KEY}}
         host: 13.233.5.172
         port: 22
         user: deployer
