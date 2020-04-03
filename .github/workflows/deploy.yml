@@ -25,10 +25,7 @@ jobs:
            echo $HELLO
            echo $MESSAGE
            ls -lath
-
-
-       # then run these commands
-       ssh_after: |
+        ssh_after: |
           echo $HELLO
           echo $MESSAGE
           ls -lath
