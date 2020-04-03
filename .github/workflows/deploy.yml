@@ -1,8 +1,4 @@
 name: Deploy
-
-on: [push]
-
-
 on: [push]
 
 jobs:
@@ -18,7 +14,7 @@ jobs:
       env:
         HELLO: cool
         MESSAGE: hello world
-     with:
+      with:
         key: ${{ secrets.KEY}}
         host: 13.233.5.172
         port: 22
