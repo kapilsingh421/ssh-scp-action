@@ -1,0 +1,37 @@
+ame: Deploy
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+ 
+    steps:
+    - uses: actions/checkout@master
+
+    - name: copy file via ssh password
+      uses: kapilsingh421/ssh-scp-action@master
+
+      env:
+        HELLO: cool
+        MESSAGE: hello world
+     with:
+        KEY: ${{ secrets.KEY }}
+        host: 13.233.5.172
+        port: 22
+        user: deployer
+        destination: /var/www/html
+        # runs this on remove server
+        ssh_before: |
+           echo $HELLO
+           echo $MESSAGE
+           ls -lath
+
+
+       # then run these commands
+       ssh_after: |
+          echo $HELLO
+          echo $MESSAGE
+          ls -lath
+
+
